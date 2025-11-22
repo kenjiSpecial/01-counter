@@ -1,5 +1,5 @@
 main = ".open-next/worker.js"
-name = "r3f-clicker"
+name = "01counter-100game"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
 

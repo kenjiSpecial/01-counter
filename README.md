@@ -72,7 +72,7 @@ npm run dev
 
 ## ビルド
 
-本番用ビルド:
+### 通常のNext.jsビルド
 
 ```bash
 npm run build
@@ -83,6 +83,42 @@ npm run build
 ```bash
 npm run start
 ```
+
+### Cloudflare Workers用ビルド
+
+```bash
+npm run build:cf
+```
+
+ローカルでプレビュー:
+
+```bash
+npm run preview
+```
+
+## Cloudflare Workersへのデプロイ
+
+このプロジェクトはCloudflare Workersにデプロイ可能です。
+
+### ローカルからのデプロイ
+
+```bash
+npm run deploy
+```
+
+### Cloudflare Workers Buildsでの設定
+
+Cloudflare Workers Buildsを使用する場合、以下のコマンドを設定してください：
+
+- **ビルドコマンド**: `npm run build:cf`
+- **デプロイコマンド**: `npm run deploy:cf`
+
+または、直接コマンドを指定する場合：
+
+- **ビルドコマンド**: `opennextjs-cloudflare build`
+- **デプロイコマンド**: `opennextjs-cloudflare deploy`
+
+詳細は[Cloudflare Workers Next.js ドキュメント](https://developers.cloudflare.com/workers/framework-guides/web-apps/nextjs/)を参照してください。
 
 ## ライセンス
 

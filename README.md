@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HYPER CLICKER - Counter Game
 
-## Getting Started
+Miniゲーム作成 1/100
 
-First, run the development server:
+## 概要
+
+HYPER CLICKERは、10秒間でできるだけ多くクリックする3Dクリッカーゲームです。React Three Fiberを使用した3Dグラフィックスと、Framer Motionによる滑らかなアニメーションが特徴です。
+
+## 主な機能
+
+- **3Dターゲット**: クリック可能な3Dオブジェクト（二十面体）
+- **弾む動き**: クリック時にオブジェクトが縮んで戻る（Spring animation）
+- **色変化**: クリックするたびに色がランダムに変わる
+- **パーティクルエフェクト**: クリックした瞬間に破片が飛び散る
+- **UI演出**: 残り時間が少なると赤くなるタイマー
+- **スコア表示**: リアルタイムでスコアを表示
+- **リザルト画面**: ゲーム終了後にスコアを表示し、X（Twitter）でシェア可能
+
+## 技術スタック
+
+- **Next.js 16** - Reactフレームワーク
+- **TypeScript** - 型安全性
+- **React Three Fiber** - 3Dレンダリング
+- **Three.js** - 3Dグラフィックスライブラリ
+- **@react-three/drei** - R3Fのヘルパーライブラリ
+- **Framer Motion** - UIアニメーション
+- **Tailwind CSS** - スタイリング
+
+## セットアップ
+
+### 必要な環境
+
+- Node.js 18以上
+- npm または yarn
+
+### インストール
+
+```bash
+npm install
+```
+
+### 開発サーバーの起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## プロジェクト構造
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+01-counter/
+├── app/
+│   └── page.tsx              # メインページコンポーネント
+├── components/
+│   ├── ClickTarget.tsx       # クリックターゲットの3Dコンポーネント
+│   ├── Explosion.tsx         # 爆発エフェクトの3Dコンポーネント
+│   └── GameUI.tsx            # UIレイヤー（ヘッダー、開始画面、リザルト）
+├── types/
+│   └── game.ts               # 型定義
+└── utils/
+    └── constants.ts          # 定数とユーティリティ関数
+```
 
-## Learn More
+## ゲームの遊び方
 
-To learn more about Next.js, take a look at the following resources:
+1. 「GAME START」ボタンをクリック
+2. 10秒間、できるだけ多く3Dオブジェクトをクリック
+3. 時間終了後、スコアが表示されます
+4. 「RETRY」で再プレイ、「SHARE X」でスコアをシェア
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ビルド
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+本番用ビルド:
 
-## Deploy on Vercel
+```bash
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ビルド後のサーバー起動:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run start
+```
+
+## ライセンス
+
+MIT
